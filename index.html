@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Piaskownica GA4</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
+        header { background: #2c3e50; color: white; padding: 1rem; text-align: center; }
+        nav { background: #ecf0f1; padding: 10px; text-align: center; }
+        nav a { margin: 0 15px; text-decoration: none; color: #2980b9; font-weight: bold; }
+        .container { max-width: 800px; margin: 20px auto; padding: 20px; }
+        .section { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        button { background: #27ae60; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; font-size: 16px; }
+        button:hover { background: #2ecc71; }
+        form { background: #f9f9f9; padding: 20px; border-radius: 5px; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
+        .cta-button { background: #e67e22; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Strona Testowa: Nauka GA4</h1>
+    </header>
+
+    <nav>
+        <a href="#onas" id="nav-about">O nas</a>
+        <a href="#oferta" id="nav-offer">Oferta</a>
+        <a href="#kontakt" id="nav-contact">Kontakt</a>
+        <a href="https://www.google.com" target="_blank" id="nav-exit">Wyjście do Google</a>
+    </nav>
+
+    <div class="container">
+        
+        <section id="onas" class="section">
+            <h2>O tej stronie</h2>
+            <p>To jest Twoja piaskownica do nauki <strong>Google Analytics 4</strong>. Możesz tu klikać, mierzyć i testować zdarzenia bez obaw o zepsucie prawdziwego projektu.</p>
+            <button id="btn-learn-more" class="main-btn">Kliknij mnie (Zdarzenie testowe)</button>
+        </section>
+
+        <section id="oferta" class="section">
+            <h2>Nasza Oferta</h2>
+            <ul>
+                <li>Instalacja GTM - <a href="#" class="offer-link" data-product="gtm">Szczegóły</a></li>
+                <li>Konfiguracja GA4 - <a href="#" class="offer-link" data-product="ga4">Szczegóły</a></li>
+                <li>Dashboardy w Looker Studio - <a href="#" class="offer-link" data-product="looker">Szczegóły</a></li>
+            </ul>
+        </section>
+
+        <section id="kontakt" class="section">
+            <h2>Skontaktuj się</h2>
+            <p>Wypełnij formularz, aby przetestować śledzenie konwersji (form_submission).</p>
+            <form id="contact-form">
+                <label for="name">Imię:</label>
+                <input type="text" id="name" name="name" placeholder="Twoje imię..." required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Twój e-mail..." required>
+                
+                <label for="message">Wiadomość:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                
+                <button type="submit" class="cta-button" id="form-submit-btn">Wyślij formularz</button>
+            </form>
+            <p id="thank-you-msg" style="display:none; color: green; font-weight: bold;">Dziękujemy! Formularz został (symulacyjnie) wysłany.</p>
+        </section>
+
+    </div>
+
+    <script>
+        // Prosty skrypt obsługujący wysyłkę formularza, abyś widział efekt na stronie
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('thank-you-msg').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
